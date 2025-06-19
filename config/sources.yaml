@@ -1,0 +1,66 @@
+sources:
+  tier_1:
+    - name: "MIT Technology Review"
+      url: "https://www.technologyreview.com"
+      type: "tech_news"
+      crawl_frequency: "6h"
+      selectors:
+        articles: "article.content-card"
+        title: "h3"
+        link: "a[href]"
+        summary: "p.content-card__deck"
+    
+    - name: "The Economist"
+      url: "https://www.economist.com"
+      type: "analysis"
+      crawl_frequency: "12h"
+      api_available: true
+    
+    - name: "Futurity"
+      url: "https://www.futurity.org"
+      type: "research_news"
+      crawl_frequency: "daily"
+      selectors:
+        articles: "article.article-item"
+        title: "h2.article-title"
+        link: "a[href]"
+        summary: "div.article-excerpt"
+
+  tier_2:
+    - name: "Next Big Future"
+      url: "http://nextbigfuture.com"
+      type: "tech_speculation"
+      crawl_frequency: "daily"
+    
+    - name: "The Long Now Foundation"
+      url: "http://blog.longnow.org"
+      type: "long_term_thinking"
+      crawl_frequency: "weekly"
+
+  tier_3:
+    - name: "The Conversation"
+      url: "https://theconversation.com/us"
+      type: "academic"
+      crawl_frequency: "daily"
+    
+    - name: "Singularity Hub"
+      url: "https://singularityhub.com"
+      type: "futurism"
+      crawl_frequency: "daily"
+
+# Signal detection categories
+categories:
+  - technological
+  - social
+  - economic
+  - environmental
+  - political
+  - wildcard
+
+# Reliability scoring factors
+reliability_factors:
+  source_authority: 0.3
+  citation_count: 0.2
+  expert_authorship: 0.2
+  factual_accuracy: 0.2
+  recency: 0.1
